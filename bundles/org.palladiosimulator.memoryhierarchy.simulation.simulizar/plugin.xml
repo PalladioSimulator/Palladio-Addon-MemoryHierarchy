@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.palladiosimulator.simulizar.interpreter.rdseffswitch">
+      <rdseffswitch
+            rdseffswitch="simulizar.MemoryRDSeffSwitchFactory">
+      </rdseffswitch>
+   </extension>
+   <extension
+         point="org.palladiosimulator.simulizar.modelobserver">
+      <modelObserver
+            modelObserver="simulizar.MemoryHierarchyObserver">
+      </modelObserver>
+   </extension>
+   <extension
+         id="_mCxYIq5uEeqKMLLYslW7BA"
+         point="de.uka.ipd.sdq.simucomframework.resources.scheduledresource">
+      <scheduledresource
+            class="resourcesactivememory.ScheduledResourceFactory">
+      </scheduledresource>
+   </extension>
+
+</plugin>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.sirius.externalJavaAction">
+      <javaActions
+            actionClass="org.palladiosimulator.editors.sirius.memoryhierarchy.custom.externaljavaactions.AddHitRate"
+            id="AddHitRate">
+      </javaActions>
+      <javaActions
+            actionClass="org.palladiosimulator.editors.sirius.memoryhierarchy.custom.externaljavaactions.AddMemoryLinkResource"
+            id="AddMemoryLinkResource">
+      </javaActions>
+      <javaActions
+            actionClass="org.palladiosimulator.editors.sirius.memoryhierarchy.custom.externaljavaactions.RemoveMemoryHierarchyConnector"
+            id="RemoveMemoryHierarchyConnector">
+      </javaActions>
+      <javaActions
+            actionClass="org.palladiosimulator.editors.sirius.memoryhierarchy.custom.externaljavaactions.SetMemoryLinkingResourceThroughput"
+            id="SetMemoryLinkingResourceThroughput">
+      </javaActions>
+      <javaActions
+            actionClass="org.palladiosimulator.editors.sirius.memoryhierarchy.custom.externaljavaactions.SetMemoryLinkingResourceLatency"
+            id="SetMemoryLinkingResourceLatency">
+      </javaActions>
+   </extension>
+
+</plugin>

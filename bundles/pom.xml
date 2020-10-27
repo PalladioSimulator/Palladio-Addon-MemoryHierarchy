@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.palladiosimulator.memoryhierarchy</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>bundles</artifactId>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>org.palladiosimulator.memoryhierarchy</module>
+		<module>org.palladiosimulator.memoryhierarchy.edit</module>
+		<module>org.palladiosimulator.memoryhierarchy.editor</module>
+		<module>org.palladiosimulator.memoryhierarchy.profile</module>
+		<module>org.palladiosimulator.memoryhierarchy.simulation.simulizar</module>
+		<module>org.palladiosimulator.editors.sirius.memoryhieararchy.custom</module>
+	</modules>
+
+</project>

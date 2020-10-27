@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="memoryhierarchy" version="12.0.0.2017041100">
+  <ownedViewpoints name="MemoryHierarchy" modelFileExtension="memoryhierarchy">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="MemoryHierarchy Diagramm" initialisation="true" domainClass="memoryhierarchy::MemoryHierarchyContainer" enablePopupBars="true">
+      <metamodel href="http://palladiosimulator.org/MemoryHierarchy/1.0#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="MemoryPredecessorLinkConnector" deletionDescription="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@toolSections.3/@ownedTools[name='DeletePredecessorConnector%20Action']" sourceMapping="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='MemoryHierarchyLinkingResource']" targetMapping="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='MemoryCache'] //@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='Core']" targetFinderExpression="feature:hierarchyPredecessor_MemoryHierarchyLinkingResource">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" endsCentering="Both" centeredSourceMappings="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='MemoryHierarchyLinkingResource']" centeredTargetMappings="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='Core'] //@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='MemoryCache']">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="MemorySuccessorLinkConnector" deletionDescription="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@toolSections.3/@ownedTools[name='DeleteSuccessorConnector%20Action']" sourceMapping="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='MemoryHierarchyLinkingResource']" targetMapping="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='MemoryCache']" targetFinderExpression="feature:hierarchySuccessor_MemoryHierarchyLinkingResource">
+          <style sizeComputationExpression="2" endsCentering="Both">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="MemoryHierachyResourceEnvironment" semanticCandidatesExpression="feature:memoryHierarchyEnvironment_MemoryHierarchyContainer" domainClass="memoryhierarchy::MemoryHierarchyResourceEnvironment">
+          <subContainerMappings name="Core" semanticCandidatesExpression="feature:cpuStartingPoint_MemoryHierarchyResourceEnvironment" domainClass="memoryhierarchy::CacheStartingPoint">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql: '&lt;&lt;Core>>\n'.concat(self.entityName)">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="MemoryHierarchyLinkingResource" semanticCandidatesExpression="feature:memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment" domainClass="memoryhierarchy::MemoryHierarchyLinkingResource" childrenPresentation="VerticalStack">
+            <subContainerMappings name="MemoryLinkResourceSpecification" semanticCandidatesExpression="var:self" domainClass="memoryhierarchy::MemoryHierarchyLinkingResource" childrenPresentation="List">
+              <subNodeMappings name="Latency" semanticCandidatesExpression="feature:eAllContents" doubleClickDescription="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@toolSections.3/@ownedTools[name='EditLatency']" domainClass="memoryhierarchy::MemoryHierarchyLinkingResourceSpecification">
+                <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Latency: ' + self.latency_MemoryHierarchyLinkingResourceSpecification.specification.toString()" labelAlignment="LEFT" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                </style>
+              </subNodeMappings>
+              <subNodeMappings name="Throughput" semanticCandidatesExpression="feature:eAllContents" doubleClickDescription="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@toolSections.3/@ownedTools[name='EditThroughput']" domainClass="memoryhierarchy::MemoryHierarchyLinkingResourceSpecification">
+                <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Throughput:' + self.throughput_MemoryHierarchyLinkingResourceSpecification.specification.toString()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                </style>
+              </subNodeMappings>
+              <subNodeMappings name="numberOfReplicas" semanticCandidatesExpression="feature:eAllContents" domainClass="memoryhierarchy::MemoryHierarchyLinkingResourceSpecification">
+                <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'NumberOfReplicas:' + self.numberOfReplicas.toString()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                </style>
+              </subNodeMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="MemoryHierarchyLinkResourceSpecification">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" arcHeight="5" borderSizeComputationExpression="1" labelExpression="aql: '&lt;&lt;MemoryLinkingResource>>\n'.concat(self.entityName)" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="MemoryCache" semanticCandidatesExpression="feature:memoryCache_MemoryHierarchyResourceEnvironment" domainClass="memoryhierarchy::MemoryCache" childrenPresentation="List">
+            <subNodeMappings name="HitRate" labelDirectEdit="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@toolSections.3/@ownedTools[name='Hit%20Rate']" semanticCandidatesExpression="var:self" domainClass="memoryhierarchy::MemoryCache">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Hit Rate: ' + self.cacheHitRate.toString()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="PrivateCache" semanticCandidatesExpression="var:self" domainClass="memoryhierarchy::MemoryCache">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Private Cache: ' + self.isPrivateCache.toString()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql: '&lt;&lt;MemoryCache>>\n'.concat(self.entityName).toString()">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+            <conditionnalStyles predicateExpression="aql:self.isPrivateCache">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql: '&lt;&lt;MemoryCache>>\n'.concat(self.entityName).toString()">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </conditionnalStyles>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql: '&lt;&lt;MemoryHierarchyEnvironment>>\n'.concat(self.entityName) + ' ID: '+self.id">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Memory Hierarchy Environment">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Memory Hierarchy Environment" containerMappings="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsTypeOf(memoryhierarchy::MemoryHierarchyContainer)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="memoryhierarchy::MemoryHierarchyResourceEnvironment" referenceName="memoryHierarchyEnvironment_MemoryHierarchyContainer">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="entityName" valueExpression="aql:'MemoryHierarchyEnvironment-'+ container.oclAsType(memoryhierarchy::MemoryHierarchyContainer).memoryHierarchyEnvironment_MemoryHierarchyContainer->size()"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Memory Blocks">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Core " containerMappings="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='Core']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsTypeOf(memoryhierarchy::MemoryHierarchyResourceEnvironment)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="memoryhierarchy::CacheStartingPoint" referenceName="cpuStartingPoint_MemoryHierarchyResourceEnvironment">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="entityName" valueExpression="CPU-Core"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Memory Cache" containerMappings="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='MemoryCache']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsTypeOf(memoryhierarchy::MemoryHierarchyResourceEnvironment)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="memoryhierarchy::MemoryCache" referenceName="memoryCache_MemoryHierarchyResourceEnvironment">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="entityName" valueExpression="aql:'L'+ container.oclAsType(memoryhierarchy::MemoryHierarchyResourceEnvironment).memoryCache_MemoryHierarchyResourceEnvironment->size() + ' Cache'"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="cacheHitRate" valueExpression="1.0"/>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                      <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="AddHitRate" id="AddHitRate"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Memory Hierarchy Bus">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Memory Hierarchy Linking Resource" containerMappings="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='MemoryHierarchyLinkingResource']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:container.oclIsTypeOf(memoryhierarchy::MemoryHierarchyResourceEnvironment)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="memoryhierarchy::MemoryHierarchyLinkingResource" referenceName="memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="entityName" valueExpression="aql:'MemoryLink' + container.memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment->size()">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="memoryhierarchy::MemoryHierarchyLinkingResourceSpecification" referenceName="memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource">
+                          <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Add MemoryLink Resource" id="AddMemoryLinkResource">
+                            <parameters name="newMemoryLinkResourceSpecification" value="var:instance"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Predecessor Connector" precondition="aql:(preTargetView.incomingEdges.sourceNode -> size() &lt; 2) and (preTarget.differs(preSource))" edgeMappings="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@edgeMappings[name='MemoryPredecessorLinkConnector']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="hierarchyPredecessor_MemoryHierarchyLinkingResource" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Successor Connector" precondition="aql: (preTargetView.incomingEdges.sourceNode -> size() &lt; 2 ) and (preTarget.differs(preSource)" edgeMappings="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@edgeMappings[name='MemorySuccessorLinkConnector']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="hierarchySuccessor_MemoryHierarchyLinkingResource" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Actions">
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteSuccessorConnector Action">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Unset" featureName="hierarchySuccessor_MemoryHierarchyLinkingResource"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeletePredecessorConnector Action">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Unset" featureName="hierarchyPredecessor_MemoryHierarchyLinkingResource"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="EditThroughput" mappings="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='MemoryHierarchyLinkingResource']/@subContainerMappings[name='MemoryLinkResourceSpecification']/@subNodeMappings[name='Throughput']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="SetMemoryLinkingResourceThroughput" id="SetMemoryLinkingResourceThroughput">
+                  <parameters name="element" value="var:element"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="EditLatency" mappings="//@ownedViewpoints[name='MemoryHierarchy']/@ownedRepresentations[name='MemoryHierarchy%20Diagramm']/@defaultLayer/@containerMappings[name='MemoryHierachyResourceEnvironment']/@subContainerMappings[name='MemoryHierarchyLinkingResource']/@subContainerMappings[name='MemoryLinkResourceSpecification']/@subNodeMappings[name='Latency']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="SetMemoryLinkingResourceLatency" id="SetMemoryLinkingResourceLatency">
+                  <parameters name="element" value="var:element"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Hit Rate">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="cacheHitRate" valueExpression="var:arg0"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.palladiosimulator.ediotrs.sirius.memoryhierarchy.Services"/>
+  </ownedViewpoints>
+</description:Group>
