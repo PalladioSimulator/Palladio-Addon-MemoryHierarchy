@@ -18,7 +18,7 @@
 		<module>org.palladiosimulator.memoryhierarchy.editor</module>
 		<module>org.palladiosimulator.memoryhierarchy.profile</module>
 		<module>org.palladiosimulator.memoryhierarchy.simulation.simulizar</module>
-		<module>org.palladiosimulator.editors.sirius.memoryhieararchy.custom</module>
+		<module>org.palladiosimulator.editors.sirius.memoryhierarchy.custom</module>
 	</modules>
 
 </project>
