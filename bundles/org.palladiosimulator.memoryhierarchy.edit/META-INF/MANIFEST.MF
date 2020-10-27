@@ -8,7 +8,6 @@ Bundle-ClassPath: .
 Bundle-Activator: org.palladiosimulator.memoryhierarchy.provider.MemoryhierarchyEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.palladiosimulator.memoryhierarchy.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.palladiosimulator.memoryhierarchy;visibility:=reexport,
@@ -26,3 +25,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-11

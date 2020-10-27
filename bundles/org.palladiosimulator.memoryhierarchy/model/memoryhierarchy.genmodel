@@ -8,7 +8,7 @@
     editorPluginClass="org.palladiosimulator.memoryhierarchy.presentation.MemoryhierarchyEditorPlugin"
     rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
     codeFormatting="true" testSuiteClass="org.palladiosimulator.memoryhierarchy.tests.MemoryhierarchyAllTests"
-    importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="7.0"
+    importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="11.0"
     copyrightFields="false" providerRootExtendsClass="" editPluginID="org.palladiosimulator.memoryhierarchy.edit"
     testsPluginID="org.palladiosimulator.memoryhierarchy.tests" runtimeVersion="2.12"
     usedGenPackages="../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier ../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm ../../de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction ../../de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex ../../de.uka.ipd.sdq.units/model/Units.genmodel#//units ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
