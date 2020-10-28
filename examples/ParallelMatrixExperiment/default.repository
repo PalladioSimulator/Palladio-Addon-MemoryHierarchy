@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.palladiosimulator.memoryhierarchy="http://palladiosimulator.org/MemoryHierarchy/1.0" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_TnbosFb2EemJd_1x_v9khA" entityName="defaultRepository" repositoryDescription="">
+  <components__Repository xsi:type="repository:BasicComponent" id="_-4ffAFb2EemJd_1x_v9khA" entityName="MatrixMultiplicator">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_IGKIcFb3EemJd_1x_v9khA" entityName="Provided_IMatrixMultiplicator_MatrixMultiplicator" providedInterface__OperationProvidedRole="_T9kQwFb2EemJd_1x_v9khA"/>
+    <resourceRequiredRoles__ResourceInterfaceRequiringEntity id="_JOIOsJ8xEeq9Gq0EJEG07g" entityName="IMemoryHierarchy">
+      <requiredResourceInterface__ResourceRequiredRole href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_taS3EI03EeqdKsmjMd-Eeg"/>
+    </resourceRequiredRoles__ResourceInterfaceRequiringEntity>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_IGL9oFb3EemJd_1x_v9khA" describedService__SEFF="_Y121YFb2EemJd_1x_v9khA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_IGL9oVb3EemJd_1x_v9khA" entityName="start" successor_AbstractAction="_LLVwsFb3EemJd_1x_v9khA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_IGMksFb3EemJd_1x_v9khA" entityName="stop" predecessor_AbstractAction="_LLVwsFb3EemJd_1x_v9khA"/>
+      <steps_Behaviour xsi:type="seff:ForkAction" id="_LLVwsFb3EemJd_1x_v9khA" entityName="Parallel actions" predecessor_AbstractAction="_IGL9oVb3EemJd_1x_v9khA" successor_AbstractAction="_IGMksFb3EemJd_1x_v9khA">
+        <synchronisingBehaviours_ForkAction id="_QdME0Fb3EemJd_1x_v9khA">
+          <synchronousForkedBehaviours_SynchronisationPoint id="_bClxsAwEEeuq_sOoDcCVWg">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_grSfkgwEEeuq_sOoDcCVWg" successor_AbstractAction="_qGB7vgwEEeuq_sOoDcCVWg"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_qGB7vgwEEeuq_sOoDcCVWg" entityName="CPU call of Thread1" predecessor_AbstractAction="_grSfkgwEEeuq_sOoDcCVWg" successor_AbstractAction="_iBRbIAwEEeuq_sOoDcCVWg">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_iBRbIAwEEeuq_sOoDcCVWg" entityName="Memory Call of Thread1" predecessor_AbstractAction="_qGB7vgwEEeuq_sOoDcCVWg" successor_AbstractAction="_CAV_wAwFEeuq_sOoDcCVWg">
+              <resourceCall__Action id="_u9y74QwEEeuq_sOoDcCVWg" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_CAV_wAwFEeuq_sOoDcCVWg" predecessor_AbstractAction="_iBRbIAwEEeuq_sOoDcCVWg"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_Kd7bEBfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_Kd7bERfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd7bEhfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_Kd7bEhfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread2" predecessor_AbstractAction="_Kd7bERfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd8pPhfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_Kd8pPhfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread2" predecessor_AbstractAction="_Kd7bEhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd8pQBfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_Kd8pPxfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_Kd8pQBfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_Kd8pPhfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_Kd8pQRfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_Kd8pQhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd8pQxfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_Kd8pQxfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread3" predecessor_AbstractAction="_Kd8pQhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd93UBfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_Kd93UBfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread3" predecessor_AbstractAction="_Kd8pQxfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd93UhfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_Kd93URfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_Kd93UhfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_Kd93UBfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_Kd93UxfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_Kd93VBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd93VRfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_Kd93VRfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread4" predecessor_AbstractAction="_Kd93VBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd-ebRfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_Kd-ebRfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread4" predecessor_AbstractAction="_Kd93VRfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd-ebxfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_Kd-ebhfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_Kd-ebxfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_Kd-ebRfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_Kd-ecBfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_Kd-ecRfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd-echfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_Kd-echfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread5" predecessor_AbstractAction="_Kd-ecRfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd_FfhfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_Kd_FfhfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread5" predecessor_AbstractAction="_Kd-echfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd_FgBfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_Kd_FfxfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_Kd_FgBfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_Kd_FfhfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_Kd_FgRfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_Kd_FghfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd_FgxfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_Kd_FgxfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread6" predecessor_AbstractAction="_Kd_FghfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeATkBfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeATkBfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread6" predecessor_AbstractAction="_Kd_FgxfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeATkhfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeATkRfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeATkhfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeATkBfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeATkxfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeATlBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeATlRfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeATlRfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread7" predecessor_AbstractAction="_KeATlBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeA6rhfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeA6rhfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread7" predecessor_AbstractAction="_KeATlRfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeA6sBfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeA6rxfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeA6sBfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeA6rhfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeA6sRfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeA6shfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeA6sxfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeA6sxfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread8" predecessor_AbstractAction="_KeA6shfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeCIwBfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeCIwBfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread8" predecessor_AbstractAction="_KeA6sxfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeCIwhfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeCIwRfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeCIwhfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeCIwBfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeCIwxfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeCIxBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeCIxRfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeCIxRfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread9" predecessor_AbstractAction="_KeCIxBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeCv2xfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeCv2xfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread9" predecessor_AbstractAction="_KeCIxRfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeCv3RfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeCv3BfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeCv3RfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeCv2xfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeCv3hfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeCv3xfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeCv4BfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeCv4BfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread10" predecessor_AbstractAction="_KeCv3xfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeDW7hfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeDW7hfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread10" predecessor_AbstractAction="_KeCv4BfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeDW8BfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeDW7xfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeDW8BfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeDW7hfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeDW8RfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeDW8hfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeDW8xfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeDW8xfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread11" predecessor_AbstractAction="_KeDW8hfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeD9_hfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeD9_hfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread11" predecessor_AbstractAction="_KeDW8xfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeD-ABfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeD9_xfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeD-ABfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeD9_hfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeD-ARfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeD-AhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeD-AxfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeD-AxfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread12" predecessor_AbstractAction="_KeD-AhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeFMExfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeFMExfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread12" predecessor_AbstractAction="_KeD-AxfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeFMFRfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeFMFBfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeFMFRfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeFMExfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeFMFhfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeFMFxfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeFMGBfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeFMGBfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread13" predecessor_AbstractAction="_KeFMFxfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeGaNBfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeGaNBfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread13" predecessor_AbstractAction="_KeFMGBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeGaNhfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeGaNRfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeGaNhfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeGaNBfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeGaNxfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeGaOBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeGaORfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeGaORfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread14" predecessor_AbstractAction="_KeGaOBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeHBThfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeHBThfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread14" predecessor_AbstractAction="_KeGaORfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeHBUBfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeHBTxfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeHBUBfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeHBThfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeHBURfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeHBUhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeHBUxfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeHBUxfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread15" predecessor_AbstractAction="_KeHBUhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeHoXhfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeHoXhfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread15" predecessor_AbstractAction="_KeHBUxfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeHoYBfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeHoXxfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeHoYBfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeHoXhfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeHoYRfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeHoYhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeHoYxfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeHoYxfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread16" predecessor_AbstractAction="_KeHoYhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeI2cBfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeI2cBfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread16" predecessor_AbstractAction="_KeHoYxfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeI2chfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeI2cRfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeI2chfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeI2cBfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeI2cxfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeI2dBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeI2dRfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeI2dRfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread17" predecessor_AbstractAction="_KeI2dBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeJdjhfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeJdjhfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread17" predecessor_AbstractAction="_KeI2dRfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeJdkBfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeJdjxfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeJdkBfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeJdjhfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeJdkRfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeJdkhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeJdkxfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeJdkxfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread18" predecessor_AbstractAction="_KeJdkhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeKEnhfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeKEnhfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread18" predecessor_AbstractAction="_KeJdkxfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeKEoBfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeKEnxfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeKEoBfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeKEnhfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeKEoRfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeKEohfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeKEoxfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeKEoxfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread19" predecessor_AbstractAction="_KeKEohfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeLSsBfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeLSsBfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread19" predecessor_AbstractAction="_KeKEoxfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeLSshfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeLSsRfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeLSshfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeLSsBfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeLSsxfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeLStBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeLStRfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeLStRfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread20" predecessor_AbstractAction="_KeLStBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeL5zRfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeL5zRfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread20" predecessor_AbstractAction="_KeLStRfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeL5zxfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeL5zhfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeL5zxfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeL5zRfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeL50BfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeL50RfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeL50hfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeL50hfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread21" predecessor_AbstractAction="_KeL50RfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeMg3hfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeMg3hfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread21" predecessor_AbstractAction="_KeL50hfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeMg4BfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeMg3xfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeMg4BfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeMg3hfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeMg4RfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeMg4hfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeMg4xfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeMg4xfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread22" predecessor_AbstractAction="_KeMg4hfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeNu8BfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeNu8BfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread22" predecessor_AbstractAction="_KeMg4xfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeNu8hfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeNu8RfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeNu8hfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeNu8BfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeNu8xfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeNu9BfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeNu9RfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeNu9RfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread23" predecessor_AbstractAction="_KeNu9BfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeOWBBfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeOWBBfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread23" predecessor_AbstractAction="_KeNu9RfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeOWBhfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeOWBRfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeOWBhfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeOWBBfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_KeOWBxfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_KeOWCBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeOWCRfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_KeOWCRfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread24" predecessor_AbstractAction="_KeOWCBfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeO9HhfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.00000034155817858377776*matrixASizeM.VALUE*matrixASizeN.VALUE*matrixBSizeJ.VALUE/24"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_KeO9HhfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread24" predecessor_AbstractAction="_KeOWCRfBEeuV_Y6v9geKfQ" successor_AbstractAction="_KeO9IBfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_KeO9HxfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="3.25785223E11/24"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_KeO9IBfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_KeO9HhfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+        </synchronisingBehaviours_ForkAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="__KkGcFb2EemJd_1x_v9khA" entityName="ExperimentHandler">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_IjOe8Fb3EemJd_1x_v9khA" entityName="Provided_IExperimentHandler_ExperimentHandler" providedInterface__OperationProvidedRole="_VTT7sFb2EemJd_1x_v9khA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_JVQY0Fb3EemJd_1x_v9khA" entityName="Required_IMatrixMultiplicator_ExperimentHandler" requiredInterface__OperationRequiredRole="_T9kQwFb2EemJd_1x_v9khA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_IjOe8Vb3EemJd_1x_v9khA" describedService__SEFF="_aW0R0Fb2EemJd_1x_v9khA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_IjOe8lb3EemJd_1x_v9khA" entityName="start" successor_AbstractAction="_6D-xsFb3EemJd_1x_v9khA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_IjOe81b3EemJd_1x_v9khA" entityName="stop" predecessor_AbstractAction="_6D-xsFb3EemJd_1x_v9khA"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_6D-xsFb3EemJd_1x_v9khA" predecessor_AbstractAction="_IjOe8lb3EemJd_1x_v9khA" successor_AbstractAction="_IjOe81b3EemJd_1x_v9khA" calledService_ExternalService="_Y121YFb2EemJd_1x_v9khA" role_ExternalService="_JVQY0Fb3EemJd_1x_v9khA">
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="matrixASizeM.VALUE"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="matrixASizeM"/>
+        </inputVariableUsages__CallAction>
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="martixASizeN.VALUE"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="matrixASizeN"/>
+        </inputVariableUsages__CallAction>
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="matrixBSizeI.VALUE"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="matrixBSizeI"/>
+        </inputVariableUsages__CallAction>
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="matrixBSizeJ.VALUE"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="matrixBSizeJ"/>
+        </inputVariableUsages__CallAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_T9kQwFb2EemJd_1x_v9khA" entityName="IMatrixMultiplicator">
+    <signatures__OperationInterface id="_Y121YFb2EemJd_1x_v9khA" entityName="multiplyMatrix">
+      <parameters__OperationSignature parameterName="matrixASizeM">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="matrixASizeN">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="matrixBSizeI">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="matrixBSizeJ">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_VTT7sFb2EemJd_1x_v9khA" entityName="IExperimentHandler">
+    <signatures__OperationInterface id="_aW0R0Fb2EemJd_1x_v9khA" entityName="simulateMatrix">
+      <parameters__OperationSignature parameterName="matrixASizeM">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="martixASizeN">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="matrixBSizeI">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="matrixBSizeJ">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+</repository:Repository>

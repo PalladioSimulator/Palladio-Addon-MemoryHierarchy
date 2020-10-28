@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resourcetype:ResourceRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:resourcetype="http://palladiosimulator.org/PalladioComponentModel/ResourceType/5.2">
+  <resourceInterfaces__ResourceRepository id="_taS3EI03EeqdKsmjMd-Eeg" entityName="MemoryHierarchyBusInterfaceComLinkResourceType">
+    <resourceSignatures__ResourceInterface id="_udq_oI03EeqdKsmjMd-Eeg" entityName="readFromMemoryHierarchy" resourceServiceId="1"/>
+  </resourceInterfaces__ResourceRepository>
+  <resourceInterfaces__ResourceRepository id="_MhwQAK7yEeqGtthuxVMsKA" entityName="MemoryHierarchyBusInterfaceActiveProcessingResource">
+    <resourceSignatures__ResourceInterface id="_SAS8UK7yEeqGtthuxVMsKA" entityName="readFromMemoryHierarchyActive" resourceServiceId="1"/>
+  </resourceInterfaces__ResourceRepository>
+  <availableResourceTypes_ResourceRepository xsi:type="resourcetype:CommunicationLinkResourceType" id="_kEMDU403EeqdKsmjMd-Eeg" entityName="MemoryHierarchyBus">
+    <resourceProvidedRoles__ResourceInterfaceProvidingEntity id="_Erf0IKTbEeqU9NnKwSK5Sg" entityName="ResourceProvidedRole_MemoryHierarchyInterface_MemoryHierarchy" providedResourceInterface__ResourceProvidedRole="_taS3EI03EeqdKsmjMd-Eeg"/>
+  </availableResourceTypes_ResourceRepository>
+  <availableResourceTypes_ResourceRepository xsi:type="resourcetype:ProcessingResourceType" id="org.palladiosimulator.memoryhierarchy.simulation.simulizar._mCxYIq5uEeqKMLLYslW7BA" entityName="MemoryHierarchyActiveBus">
+    <resourceProvidedRoles__ResourceInterfaceProvidingEntity id="_WGBbkK7yEeqGtthuxVMsKA" entityName="ResourceProvidedRole_MemoryHierarchyActiveInterface_MemoryHierarchy" providedResourceInterface__ResourceProvidedRole="_MhwQAK7yEeqGtthuxVMsKA"/>
+  </availableResourceTypes_ResourceRepository>
+</resourcetype:ResourceRepository>

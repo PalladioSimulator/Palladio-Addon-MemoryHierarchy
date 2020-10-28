@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.palladiosimulator.memoryhierarchy="http://palladiosimulator.org/MemoryHierarchy/1.0" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_TnbosFb2EemJd_1x_v9khA" entityName="defaultRepository" repositoryDescription="">
+  <components__Repository xsi:type="repository:BasicComponent" id="_-4ffAFb2EemJd_1x_v9khA" entityName="MatrixMultiplicator">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_IGKIcFb3EemJd_1x_v9khA" entityName="Provided_IMatrixMultiplicator_MatrixMultiplicator" providedInterface__OperationProvidedRole="_T9kQwFb2EemJd_1x_v9khA"/>
+    <resourceRequiredRoles__ResourceInterfaceRequiringEntity id="_JOIOsJ8xEeq9Gq0EJEG07g" entityName="IMemoryHierarchy">
+      <requiredResourceInterface__ResourceRequiredRole href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_taS3EI03EeqdKsmjMd-Eeg"/>
+    </resourceRequiredRoles__ResourceInterfaceRequiringEntity>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_IGL9oFb3EemJd_1x_v9khA" describedService__SEFF="_Y121YFb2EemJd_1x_v9khA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_IGL9oVb3EemJd_1x_v9khA" entityName="start" successor_AbstractAction="_LLVwsFb3EemJd_1x_v9khA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_IGMksFb3EemJd_1x_v9khA" entityName="stop" predecessor_AbstractAction="_LLVwsFb3EemJd_1x_v9khA"/>
+      <steps_Behaviour xsi:type="seff:ForkAction" id="_LLVwsFb3EemJd_1x_v9khA" entityName="Parallel actions" predecessor_AbstractAction="_IGL9oVb3EemJd_1x_v9khA" successor_AbstractAction="_IGMksFb3EemJd_1x_v9khA">
+        <synchronisingBehaviours_ForkAction id="_QdME0Fb3EemJd_1x_v9khA">
+          <synchronousForkedBehaviours_SynchronisationPoint id="_bClxsAwEEeuq_sOoDcCVWg">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_grSfkgwEEeuq_sOoDcCVWg" successor_AbstractAction="_qGB7vgwEEeuq_sOoDcCVWg"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_qGB7vgwEEeuq_sOoDcCVWg" entityName="CPU call of Thread1" predecessor_AbstractAction="_grSfkgwEEeuq_sOoDcCVWg" successor_AbstractAction="_iBRbIAwEEeuq_sOoDcCVWg">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.000000341558 * matrixASizeM.VALUE * matrixASizeN.VALUE * matrixBSizeJ.VALUE / 2"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_iBRbIAwEEeuq_sOoDcCVWg" entityName="Memory Call of Thread1" predecessor_AbstractAction="_qGB7vgwEEeuq_sOoDcCVWg" successor_AbstractAction="_CAV_wAwFEeuq_sOoDcCVWg">
+              <resourceCall__Action id="_u9y74QwEEeuq_sOoDcCVWg" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="81154164600.0 * 4 / 2"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_CAV_wAwFEeuq_sOoDcCVWg" predecessor_AbstractAction="_iBRbIAwEEeuq_sOoDcCVWg"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+          <synchronousForkedBehaviours_SynchronisationPoint id="_Kd7bEBfBEeuV_Y6v9geKfQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_Kd7bERfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd7bEhfBEeuV_Y6v9geKfQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_Kd7bEhfBEeuV_Y6v9geKfQ" entityName="CPU call of Thread2" predecessor_AbstractAction="_Kd7bERfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd8pPhfBEeuV_Y6v9geKfQ">
+              <resourceDemand_Action>
+                <specification_ParametericResourceDemand specification="0.000000341558 * matrixASizeM.VALUE * matrixASizeN.VALUE * matrixBSizeJ.VALUE / 2"/>
+                <requiredResource_ParametricResourceDemand href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+              </resourceDemand_Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="org.palladiosimulator.memoryhierarchy:InternalActionWithMemoryResourceCall" id="_Kd8pPhfBEeuV_Y6v9geKfQ" entityName="Memory Call of Thread2" predecessor_AbstractAction="_Kd7bEhfBEeuV_Y6v9geKfQ" successor_AbstractAction="_Kd8pQBfBEeuV_Y6v9geKfQ">
+              <resourceCall__Action id="_Kd8pPxfBEeuV_Y6v9geKfQ" resourceRequiredRole__ResourceCall="_JOIOsJ8xEeq9Gq0EJEG07g">
+                <signature__ResourceCall href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_udq_oI03EeqdKsmjMd-Eeg"/>
+                <numberOfCalls__ResourceCall specification="81154164600.0 * 4 / 2"/>
+              </resourceCall__Action>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_Kd8pQBfBEeuV_Y6v9geKfQ" predecessor_AbstractAction="_Kd8pPhfBEeuV_Y6v9geKfQ"/>
+          </synchronousForkedBehaviours_SynchronisationPoint>
+        </synchronisingBehaviours_ForkAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="__KkGcFb2EemJd_1x_v9khA" entityName="ExperimentHandler">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_IjOe8Fb3EemJd_1x_v9khA" entityName="Provided_IExperimentHandler_ExperimentHandler" providedInterface__OperationProvidedRole="_VTT7sFb2EemJd_1x_v9khA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_JVQY0Fb3EemJd_1x_v9khA" entityName="Required_IMatrixMultiplicator_ExperimentHandler" requiredInterface__OperationRequiredRole="_T9kQwFb2EemJd_1x_v9khA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_IjOe8Vb3EemJd_1x_v9khA" describedService__SEFF="_aW0R0Fb2EemJd_1x_v9khA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_IjOe8lb3EemJd_1x_v9khA" entityName="start" successor_AbstractAction="_6D-xsFb3EemJd_1x_v9khA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_IjOe81b3EemJd_1x_v9khA" entityName="stop" predecessor_AbstractAction="_6D-xsFb3EemJd_1x_v9khA"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_6D-xsFb3EemJd_1x_v9khA" predecessor_AbstractAction="_IjOe8lb3EemJd_1x_v9khA" successor_AbstractAction="_IjOe81b3EemJd_1x_v9khA" calledService_ExternalService="_Y121YFb2EemJd_1x_v9khA" role_ExternalService="_JVQY0Fb3EemJd_1x_v9khA">
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="matrixASizeM.VALUE"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="matrixASizeM"/>
+        </inputVariableUsages__CallAction>
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="martixASizeN.VALUE"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="matrixASizeN"/>
+        </inputVariableUsages__CallAction>
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="matrixBSizeI.VALUE"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="matrixBSizeI"/>
+        </inputVariableUsages__CallAction>
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="matrixBSizeJ.VALUE"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="matrixBSizeJ"/>
+        </inputVariableUsages__CallAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_T9kQwFb2EemJd_1x_v9khA" entityName="IMatrixMultiplicator">
+    <signatures__OperationInterface id="_Y121YFb2EemJd_1x_v9khA" entityName="multiplyMatrix">
+      <parameters__OperationSignature parameterName="matrixASizeM">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="matrixASizeN">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="matrixBSizeI">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="matrixBSizeJ">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_VTT7sFb2EemJd_1x_v9khA" entityName="IExperimentHandler">
+    <signatures__OperationInterface id="_aW0R0Fb2EemJd_1x_v9khA" entityName="simulateMatrix">
+      <parameters__OperationSignature parameterName="matrixASizeM">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="martixASizeN">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="matrixBSizeI">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature parameterName="matrixBSizeJ">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+</repository:Repository>

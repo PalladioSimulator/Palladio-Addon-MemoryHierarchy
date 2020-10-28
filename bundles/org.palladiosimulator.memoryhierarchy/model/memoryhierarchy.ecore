@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="memoryhierarchy" nsURI="http://palladiosimulator.org/MemoryHierarchy/1.0"
+    nsPrefix="org.palladiosimulator.memoryhierarchy">
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryHierarchyResourceEnvironment"
+      eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memoryCache_MemoryHierarchyResourceEnvironment"
+        upperBound="-1" eType="#//MemoryCache" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment"
+        upperBound="-1" eType="#//MemoryHierarchyLinkingResource" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cpuStartingPoint_MemoryHierarchyResourceEnvironment"
+        lowerBound="1" eType="#//CacheStartingPoint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryCache" eSuperTypes="#//LinkableMemoryHierarchyResources">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cacheHitRate" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPrivateCache" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryHierarchyLinkingResourceSpecification"
+      eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="communicationLinkingResourceType_MemoryHierarchyLinkingResourceSpecification"
+        lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourcetype/CommunicationLinkResourceType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latency_MemoryHierarchyLinkingResourceSpecification"
+        ordered="false" lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//core/PCMRandomVariable"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the latency of this linking resource in the simulated time unit. The latency is the time that a message on this linking resource takes to receive the receiver. In synchronous communication (call and return), the latency is added twice to the duration, once for the call and once for the response. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="throughput_MemoryHierarchyLinkingResourceSpecification"
+        ordered="false" lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//core/PCMRandomVariable"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the maximum throughput of this linking resource in byte per simulated time unit. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfReplicas" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryHierarchyLinkingResource" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource"
+        lowerBound="1" eType="#//MemoryHierarchyLinkingResourceSpecification" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hierarchySuccessor_MemoryHierarchyLinkingResource"
+        lowerBound="1" eType="#//LinkableMemoryHierarchyResources"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hierarchyPredecessor_MemoryHierarchyLinkingResource"
+        lowerBound="1" eType="#//LinkableMemoryHierarchyResources"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryHierarchyContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="memoryHierarchyEnvironment_MemoryHierarchyContainer"
+        upperBound="-1" eType="#//MemoryHierarchyResourceEnvironment" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CacheStartingPoint" eSuperTypes="#//LinkableMemoryHierarchyResources"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LinkableMemoryHierarchyResources" abstract="true"
+      eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InternalActionWithMemoryResourceCall"
+      eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//seff/InternalAction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MemoryHierarchyCallAction" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//seff/AbstractInternalControlFlowAction"/>
+</ecore:EPackage>

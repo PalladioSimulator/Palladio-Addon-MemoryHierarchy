@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated memoryhierarchy -->
+      <factory
+            uri="http://palladiosimulator.org/MemoryHierarchy/1.0"
+            class="org.palladiosimulator.memoryhierarchy.provider.MemoryHierarchyItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated memoryhierarchy -->
+      <extender
+            uri="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2"
+            class="org.palladiosimulator.memoryhierarchy.provider.MemoryHierarchyItemProviderAdapterFactory$SeffChildCreationExtender"/>
+      <extender
+            uri="http://palladiosimulator.org/PalladioComponentModel/SEFF/SEFF_Reliability/5.2"
+            class="org.palladiosimulator.memoryhierarchy.provider.MemoryHierarchyItemProviderAdapterFactory$SeffReliabilityChildCreationExtender"/>
+   </extension>
+
+</plugin>

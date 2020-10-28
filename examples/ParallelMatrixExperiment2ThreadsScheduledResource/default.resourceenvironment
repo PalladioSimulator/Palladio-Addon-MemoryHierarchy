@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:emfprofileapplication="http://www.modelversioning.org/emfprofile/application/1.1" xmlns:myprofile="MemoryHierarchyResourceContainer" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2">
+  <resourceenvironment:ResourceEnvironment entityName="Server for ExperimentHandler">
+    <linkingResources__ResourceEnvironment id="_Doos4Fb6EemJd_1x_v9khA" entityName="Link" connectedResourceContainers_LinkingResource="_CKvLgFb6EemJd_1x_v9khA _-0irwFb5EemJd_1x_v9khA">
+      <communicationLinkResourceSpecifications_LinkingResource id="_DosXQFb6EemJd_1x_v9khA">
+        <communicationLinkResourceType_CommunicationLinkResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_o3sScH2AEdyH8uerKnHYug"/>
+        <latency_CommunicationLinkResourceSpecification specification="0"/>
+        <throughput_CommunicationLinkResourceSpecification specification="1000000"/>
+      </communicationLinkResourceSpecifications_LinkingResource>
+    </linkingResources__ResourceEnvironment>
+    <resourceContainer_ResourceEnvironment id="_-0irwFb5EemJd_1x_v9khA" entityName="Server for MatrixMultiplicator">
+      <activeResourceSpecifications_ResourceContainer id="_PkJcoFb6EemJd_1x_v9khA" numberOfReplicas="24">
+        <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#ProcessorSharing"/>
+        <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+        <processingRate_ProcessingResourceSpecification specification="1"/>
+      </activeResourceSpecifications_ResourceContainer>
+      <activeResourceSpecifications_ResourceContainer id="_XPIqMBhlEeuDHrp2bXUsiQ">
+        <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#FCFS"/>
+        <activeResourceType_ActiveResourceSpecification href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#org.palladiosimulator.memoryhierarchy.simulation.simulizar._mCxYIq5uEeqKMLLYslW7BA"/>
+        <processingRate_ProcessingResourceSpecification specification="404"/>
+      </activeResourceSpecifications_ResourceContainer>
+    </resourceContainer_ResourceEnvironment>
+    <resourceContainer_ResourceEnvironment id="_CKvLgFb6EemJd_1x_v9khA" entityName="Server for ExperimentHandler">
+      <activeResourceSpecifications_ResourceContainer id="_OB4_sFb6EemJd_1x_v9khA" numberOfReplicas="24">
+        <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#ProcessorSharing"/>
+        <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+        <processingRate_ProcessingResourceSpecification specification="1"/>
+      </activeResourceSpecifications_ResourceContainer>
+    </resourceContainer_ResourceEnvironment>
+  </resourceenvironment:ResourceEnvironment>
+  <emfprofileapplication:ProfileApplication>
+    <stereotypeApplications xsi:type="myprofile:ResourceContainerWithMemoryHierarchy" appliedTo="_-0irwFb5EemJd_1x_v9khA">
+      <extension href="../../plugin/MemoryHierarchyResourceContainer.MemoryHierarchyResourceContainer/profile.emfprofile_diagram#_lmx8cAv0Eeu6s_XkQrIzBA"/>
+      <MemoryHierarchyResourceEnvironment href="My.memoryhierarchy#_910qoAwFEeuq_sOoDcCVWg"/>
+    </stereotypeApplications>
+    <importedProfiles nsURI="MemoryHierarchyResourceContainer" location="platform:/plugin/MemoryHierarchyResourceContainer.MemoryHierarchyResourceContainer/profile.emfprofile_diagram"/>
+  </emfprofileapplication:ProfileApplication>
+</xmi:XMI>

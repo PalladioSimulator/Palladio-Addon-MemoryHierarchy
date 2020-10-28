@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.palladiosimulator.memoryhierarchy:MemoryHierarchyContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.palladiosimulator.memoryhierarchy="http://palladiosimulator.org/MemoryHierarchy/1.0">
+  <memoryHierarchyEnvironment_MemoryHierarchyContainer id="_910qoAwFEeuq_sOoDcCVWg">
+    <memoryCache_MemoryHierarchyResourceEnvironment id="_KeTOgxfBEeuV_Y6v9geKfQ" entityName="L1d-Cache" cacheHitRate="0.9780651197" isPrivateCache="true"/>
+    <memoryCache_MemoryHierarchyResourceEnvironment id="_KeTOhhfBEeuV_Y6v9geKfQ" entityName="L2-Cache" cacheHitRate="0.2908094589" isPrivateCache="true"/>
+    <memoryCache_MemoryHierarchyResourceEnvironment id="_KeTOiRfBEeuV_Y6v9geKfQ" entityName="L3-Cache" cacheHitRate="0.3960192199" isPrivateCache="true"/>
+    <memoryCache_MemoryHierarchyResourceEnvironment id="_KeTOjBfBEeuV_Y6v9geKfQ" entityName="DRAM(Main Memory)" cacheHitRate="1.0"/>
+    <memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment id="_KeTOgRfBEeuV_Y6v9geKfQ" entityName="Core-L1-Link" hierarchySuccessor_MemoryHierarchyLinkingResource="_KeTOgxfBEeuV_Y6v9geKfQ" hierarchyPredecessor_MemoryHierarchyLinkingResource="_KeTOgBfBEeuV_Y6v9geKfQ">
+      <memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource id="_KeTOghfBEeuV_Y6v9geKfQ" numberOfReplicas="12">
+        <communicationLinkingResourceType_MemoryHierarchyLinkingResourceSpecification href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_kEMDU403EeqdKsmjMd-Eeg"/>
+        <latency_MemoryHierarchyLinkingResourceSpecification specification="0"/>
+        <throughput_MemoryHierarchyLinkingResourceSpecification specification="81196000"/>
+      </memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource>
+    </memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment>
+    <memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment id="_KeTOhBfBEeuV_Y6v9geKfQ" entityName="L1-L2-Link" hierarchySuccessor_MemoryHierarchyLinkingResource="_KeTOhhfBEeuV_Y6v9geKfQ" hierarchyPredecessor_MemoryHierarchyLinkingResource="_KeTOgxfBEeuV_Y6v9geKfQ">
+      <memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource id="_KeTOhRfBEeuV_Y6v9geKfQ" numberOfReplicas="12">
+        <communicationLinkingResourceType_MemoryHierarchyLinkingResourceSpecification href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_kEMDU403EeqdKsmjMd-Eeg"/>
+        <latency_MemoryHierarchyLinkingResourceSpecification specification="0"/>
+        <throughput_MemoryHierarchyLinkingResourceSpecification specification="37816000/ 16"/>
+      </memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource>
+    </memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment>
+    <memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment id="_KeTOhxfBEeuV_Y6v9geKfQ" entityName="L2-L3-Link" hierarchySuccessor_MemoryHierarchyLinkingResource="_KeTOiRfBEeuV_Y6v9geKfQ" hierarchyPredecessor_MemoryHierarchyLinkingResource="_KeTOhhfBEeuV_Y6v9geKfQ">
+      <memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource id="_KeTOiBfBEeuV_Y6v9geKfQ" numberOfReplicas="12">
+        <communicationLinkingResourceType_MemoryHierarchyLinkingResourceSpecification href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_kEMDU403EeqdKsmjMd-Eeg"/>
+        <latency_MemoryHierarchyLinkingResourceSpecification specification="0"/>
+        <throughput_MemoryHierarchyLinkingResourceSpecification specification="24469000/ 16"/>
+      </memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource>
+    </memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment>
+    <memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment id="_KeTOihfBEeuV_Y6v9geKfQ" entityName="L3-DRAM-Link" hierarchySuccessor_MemoryHierarchyLinkingResource="_KeTOjBfBEeuV_Y6v9geKfQ" hierarchyPredecessor_MemoryHierarchyLinkingResource="_KeTOiRfBEeuV_Y6v9geKfQ">
+      <memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource id="_KeTOixfBEeuV_Y6v9geKfQ">
+        <communicationLinkingResourceType_MemoryHierarchyLinkingResourceSpecification href="../../plugin/org.palladiosimulator.memoryhierarchy/model/memoryhierarchy.resourcetype#_kEMDU403EeqdKsmjMd-Eeg"/>
+        <latency_MemoryHierarchyLinkingResourceSpecification specification="0"/>
+        <throughput_MemoryHierarchyLinkingResourceSpecification specification="18368000/ 16"/>
+      </memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource>
+    </memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment>
+    <cpuStartingPoint_MemoryHierarchyResourceEnvironment id="_KeTOgBfBEeuV_Y6v9geKfQ" entityName="Core"/>
+  </memoryHierarchyEnvironment_MemoryHierarchyContainer>
+  <memoryHierarchyEnvironment_MemoryHierarchyContainer id="_qsW3gBDIEeuzCq76Fx9fdw" entityName="MemoryHierarchyEnvironment-2">
+    <memoryCache_MemoryHierarchyResourceEnvironment id="_sImMABDIEeuzCq76Fx9fdw" entityName="L1 Cache" cacheHitRate="1.0"/>
+    <memoryCache_MemoryHierarchyResourceEnvironment id="_swbBABDIEeuzCq76Fx9fdw" entityName="L2 Cache" cacheHitRate="1.0"/>
+    <memoryCache_MemoryHierarchyResourceEnvironment id="_tA4e4BDIEeuzCq76Fx9fdw" entityName="DRAM" cacheHitRate="1.0"/>
+    <memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment id="_uUdmoBDIEeuzCq76Fx9fdw" entityName="MemoryLink1" hierarchySuccessor_MemoryHierarchyLinkingResource="_sImMABDIEeuzCq76Fx9fdw" hierarchyPredecessor_MemoryHierarchyLinkingResource="_r2wOEBDIEeuzCq76Fx9fdw">
+      <memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource id="_uUdmoRDIEeuzCq76Fx9fdw">
+        <latency_MemoryHierarchyLinkingResourceSpecification specification="1"/>
+        <throughput_MemoryHierarchyLinkingResourceSpecification specification="1"/>
+      </memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource>
+    </memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment>
+    <memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment id="_wj-yMBDIEeuzCq76Fx9fdw" entityName="MemoryLink2" hierarchyPredecessor_MemoryHierarchyLinkingResource="_swbBABDIEeuzCq76Fx9fdw">
+      <memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource id="_wj_ZQBDIEeuzCq76Fx9fdw">
+        <latency_MemoryHierarchyLinkingResourceSpecification specification="1"/>
+        <throughput_MemoryHierarchyLinkingResourceSpecification specification="1"/>
+      </memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource>
+    </memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment>
+    <memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment id="_xs2ewBDIEeuzCq76Fx9fdw" entityName="MemoryLink3" hierarchySuccessor_MemoryHierarchyLinkingResource="_tA4e4BDIEeuzCq76Fx9fdw" hierarchyPredecessor_MemoryHierarchyLinkingResource="_swbBABDIEeuzCq76Fx9fdw">
+      <memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource id="_xs3F0BDIEeuzCq76Fx9fdw">
+        <latency_MemoryHierarchyLinkingResourceSpecification specification="1"/>
+        <throughput_MemoryHierarchyLinkingResourceSpecification specification="1"/>
+      </memoryHierarchyLinkingResourceSpecification_MemoryHierarchyLinkingResource>
+    </memoryHierarchyLinkingResource_MemoryHierarchyResourceEnvironment>
+    <cpuStartingPoint_MemoryHierarchyResourceEnvironment id="_r2wOEBDIEeuzCq76Fx9fdw" entityName="CPU-Core"/>
+  </memoryHierarchyEnvironment_MemoryHierarchyContainer>
+</org.palladiosimulator.memoryhierarchy:MemoryHierarchyContainer>
