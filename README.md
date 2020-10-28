@@ -4,7 +4,7 @@ This addon allows the modeling of the memory hierarchy and its data transfer to 
 The focus is on multicore systems.
 
 It lets you model the memory hierarchy with their bandwidths. See the figure below:
-![MemHierarchyImage](documentation/memHierarchyHtHorizontal.pdf)
+![MemHierarchyImage](./documentation/memHierarchyHtHorizontal.png)
 
 You can assign the modeled memory hierarchy to a Resource Container that has the \<\<ResourceContainerWithMemoryHierarchy\>\> stereotype. (Currently, the application of the stereotype and assignment of the memory hierarchy only works in the tree editor)
 
@@ -41,10 +41,10 @@ We provided two example Palladio models that use the SimuLizar or SimuCom fork a
 
 Tipp you might have to activate the SeffWithMemoryHierarchy viewpoint to see the new calls, which are required when the rdseff extension point is used.
 
-![SeffWithMemoryHierarchyVP](sirius-call-viewpoints.png)
+![SeffWithMemoryHierarchyVP](./documentation/sirius-call-viewpoints.png)
 
 If the viewpoint is activated you should see something like this:
-![MatrixRDSeffEPNewCalls](matrixSeffNewSirius.pdf)
+![MatrixRDSeffEPNewCalls](./documentation/matrixSeffNewSirius.png)
 
 If problems with Siiurs occur the following websites might help:
 - https://sdqweb.ipd.kit.edu/wiki/Graphical_Editor_Extension_Development
